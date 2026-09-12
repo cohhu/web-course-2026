@@ -425,6 +425,7 @@ h1, h2, h3, h4, .btn, .logo-title, .tier-title, .form-title {
   justify-content: center;
   align-items: center;
   gap: 16px;
+  margin-top: 1.5rem;
   margin-bottom: 2.2rem;
 }
 
