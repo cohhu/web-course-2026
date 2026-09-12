@@ -1,0 +1,818 @@
+/* БАЗОВЫЕ НАСТРОЙКИ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #060a08;
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(180, 45, 25, 0.18), transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(40, 145, 50, 0.22), transparent 45%),
+    linear-gradient(180deg, #090f0b 0%, #040705 100%);
+  background-attachment: fixed;
+  color: #cfded6;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h1, h2, h3, h4, .btn, .logo-title, .tier-title, .form-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #f5cf72;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 14px rgba(245, 207, 114, 0.4);
+}
+
+.glow-green {
+  color: #55f367;
+  text-shadow: 0 0 12px rgba(85, 243, 103, 0.5);
+}
+
+.section-desc {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #92a49b;
+  max-width: 740px;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #3d582c 0%, #1c2e14 100%);
+  border-color: #63923f;
+  color: #e6ffe0;
+  box-shadow: 0 0 12px rgba(78, 145, 41, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #507739 0%, #27431b 100%);
+  box-shadow: 0 0 18px rgba(85, 243, 103, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: linear-gradient(180deg, #5c3c1e 0%, #2f190a 100%);
+  border-color: #966b37;
+  color: #ffe8cc;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, #744b24 0%, #42230e 100%);
+  box-shadow: 0 0 16px rgba(230, 150, 48, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ВЕРХНИЙ БАР, МЕНЮ */
+.top-bar {
+  padding: 8px 0;
+  background: rgba(5, 8, 6, 0.95);
+  border-bottom: 1px solid rgba(46, 68, 53, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.status-box {
+  font-size: 0.8rem;
+  color: #9ab0a2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.status-glow-dot {
+  width: 8px;
+  height: 8px;
+  background: #39ff14;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #39ff14;
+}
+
+.site-nav {
+  display: none;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px;
+  height: 44px;
+  padding: 12px 9px;
+  background: #101b14;
+  border: 1px solid #283e30;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  border-color: #55f367;
+  box-shadow: 0 0 10px rgba(85, 243, 103, 0.3);
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #55f367;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover .hamburger-line {
+  background-color: #f5cf72;
+}
+
+.social-links {
+  display: flex;
+  gap: 6px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: #101b14;
+  color: #f5cf72;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border: 1px solid #283e30;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  border-color: #f5cf72;
+  transform: scale(1.1);
+}
+
+/* ГЕРОЙ-СЕКЦИЯ */
+.hero-section {
+  padding: 2.5rem 0 2rem;
+  text-align: center;
+}
+
+.logo-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffdf85;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.logo-subtitle {
+  font-size: 1.1rem;
+  color: #79bf68;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.portal-frame {
+  margin: 1.5rem auto;
+  max-width: 580px;
+  border: 3px solid #3c5441;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 0 0 15px rgba(45, 110, 48, 0.25);
+  background: #020302;
+  border-radius: 6px;
+}
+
+.portal-screen {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #1a3521 0%, #030604 80%);
+}
+
+.portal-screen iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* СТРУКТУРНАЯ СЕТКА СТРАНИЦЫ */
+.page-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  background: rgba(16, 27, 21, 0.65);
+  border: 1px solid #233a2c;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  border-color: #55f367;
+  transform: translateY(-3px);
+  background: rgba(22, 38, 29, 0.85);
+  box-shadow: 0 4px 12px rgba(85, 243, 103, 0.15);
+}
+
+.classes-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 2rem;
+}
+
+.class-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 80px;
+}
+
+.class-img-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid #577b5f;
+  background: #142218;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.class-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.class-card:hover .class-img-box {
+  transform: scale(1.15);
+  border-color: #f5cf72;
+  box-shadow: 0 0 12px rgba(245, 207, 114, 0.5);
+}
+
+.class-name {
+  font-size: 0.78rem;
+  color: #c9d8d0;
+  text-align: center;
+}
+
+.tiers-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tier-card {
+  background: #111a14;
+  border: 1px solid #2b4433;
+  padding: 10px 24px;
+  border-radius: 6px;
+  min-width: 160px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tier-card:hover {
+  border-color: #f5cf72;
+  transform: translateY(-2px);
+}
+
+.tier-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f5cf72;
+}
+
+.tier-next {
+  color: #55f367;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transform: rotate(90deg);
+}
+
+.tbc-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.tbc-feature-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 14px 10px;
+  background: rgba(14, 23, 18, 0.6);
+  border: 1px solid #203527;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.tbc-feature-badge:hover {
+  border-color: #55f367;
+  transform: translateY(-3px);
+}
+
+.badge-ring {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2b4433, #0d1a11);
+  border: 2px solid #55f367;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(85, 243, 103, 0.3);
+  transition: all 0.3s ease;
+}
+
+.badge-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tbc-feature-badge:hover .badge-ring {
+  transform: scale(1.1);
+  box-shadow: 0 0 16px rgba(85, 243, 103, 0.6);
+}
+
+/* ПОДЗЕМЕЛЬЯ */
+.dungeon-radio {
+  display: none;
+}
+
+.hex-tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2.2rem;
+}
+
+.hex-tab {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 54px;
+  transition: transform 0.3s ease;
+}
+
+.hex-tab:hover {
+  transform: translateY(-4px);
+}
+
+.hexagon-shape {
+  width: 50px;
+  height: 58px;
+  background: linear-gradient(180deg, #375e3e 0%, #122416 100%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(85, 243, 103, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.hexagon-shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#dungeon-tab-1:checked ~ .hex-tabs-row #label-dungeon-1 .hexagon-shape,
+#dungeon-tab-2:checked ~ .hex-tabs-row #label-dungeon-2 .hexagon-shape,
+#dungeon-tab-3:checked ~ .hex-tabs-row #label-dungeon-3 .hexagon-shape,
+#dungeon-tab-4:checked ~ .hex-tabs-row #label-dungeon-4 .hexagon-shape,
+#dungeon-tab-5:checked ~ .hex-tabs-row #label-dungeon-5 .hexagon-shape {
+  background: linear-gradient(180deg, #5ec46a 0%, #25582e 100%);
+  transform: scale(1.15);
+  box-shadow: 0 0 16px rgba(85, 243, 103, 0.7);
+  filter: brightness(1.2);
+}
+
+.dungeon-view {
+  display: none;
+  background: rgba(14, 22, 17, 0.9);
+  border: 1px solid #2b4434;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 1.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#dungeon-tab-1:checked ~ .dungeon-cards-wrap #view-karazhan { display: flex; flex-direction: column; }
+#dungeon-tab-2:checked ~ .dungeon-cards-wrap #view-gruul { display: flex; flex-direction: column; }
+#dungeon-tab-3:checked ~ .dungeon-cards-wrap #view-magtheridon { display: flex; flex-direction: column; }
+#dungeon-tab-4:checked ~ .dungeon-cards-wrap #view-ssc { display: flex; flex-direction: column; }
+#dungeon-tab-5:checked ~ .dungeon-cards-wrap #view-tk { display: flex; flex-direction: column; }
+
+.dungeon-view-title {
+  color: #55f367;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.dungeon-big-img-box {
+  width: 100%;
+  height: 140px;
+  background: #0d1611;
+  border: 1px solid #22372a;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.dungeon-big-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dungeon-lore {
+  font-size: 0.88rem;
+  color: #9ab0a4;
+  line-height: 1.6;
+}
+
+.dungeon-bosses-box h4 {
+  font-size: 0.95rem;
+  color: #f5cf72;
+  margin-bottom: 10px;
+}
+
+.boss-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.boss-tag {
+  background: #111d16;
+  border: 1px solid #1e3125;
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  color: #e0d5a6;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* ИНФОРМАЦИЯ О БЕТА-ТЕСТЕ И ФОРМА ЗАЯВКИ */
+.beta-info-card {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 0 10px;
+}
+
+.beta-rules-text {
+  font-size: 0.95rem;
+  color: #92a49b;
+  line-height: 1.6;
+}
+
+.portal-form-wrapper {
+  background: radial-gradient(circle at center, #102619 0%, #08110b 85%);
+  border: 2px solid #365940;
+  border-radius: 12px;
+  padding: 24px 16px;
+  box-shadow: 0 0 25px rgba(45, 140, 55, 0.2);
+}
+
+.form-title {
+  text-align: center;
+  color: #f5cf72;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  color: #d1ded8;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  background: #080f0b;
+  border: 1px solid #253e2e;
+  border-radius: 4px;
+  color: #e5efe9;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-input:hover, .form-select:hover, .form-textarea:hover {
+  border-color: #4b7858;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #55f367;
+  box-shadow: 0 0 10px rgba(85, 243, 103, 0.4);
+  background: #0c1811;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(180deg, #448b30 0%, #204e13 100%);
+  border-color: #55f367;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(85, 243, 103, 0.4);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(180deg, #53a83b 0%, #296319 100%);
+  box-shadow: 0 0 20px rgba(85, 243, 103, 0.7);
+  transform: translateY(-2px);
+}
+
+/* ФУТЕР */
+.site-footer {
+  border-top: 1px solid #1d2c22;
+  background: #050806;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.btn-forum {
+  background: #142419;
+  border-color: #34523d;
+  color: #e0d09a;
+}
+
+.btn-forum:hover {
+  border-color: #e0d09a;
+  color: #ffffff;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #6a7e72;
+}
+
+/* ПЛАНШЕТЫ (768px – 1199px)*/
+@media (min-width: 768px) {
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 16px;
+  }
+
+  .nav-link {
+    color: #cfded6;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 6px 4px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #55f367;
+    text-shadow: 0 0 8px rgba(85, 243, 103, 0.6);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .portal-screen {
+    height: 270px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .tiers-flow {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .tier-next {
+    transform: rotate(0deg);
+  }
+
+  .tbc-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hex-tabs-row {
+    gap: 24px;
+  }
+
+  .hexagon-shape {
+    width: 60px;
+    height: 70px;
+  }
+
+  #dungeon-tab-1:checked ~ .dungeon-cards-wrap #view-karazhan,
+  #dungeon-tab-2:checked ~ .dungeon-cards-wrap #view-gruul,
+  #dungeon-tab-3:checked ~ .dungeon-cards-wrap #view-magtheridon,
+  #dungeon-tab-4:checked ~ .dungeon-cards-wrap #view-ssc,
+  #dungeon-tab-5:checked ~ .dungeon-cards-wrap #view-tk {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+  }
+
+  .dungeon-big-img-box {
+    height: 180px;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+
+  .btn-submit {
+    width: auto;
+    min-width: 260px;
+  }
+}
+
+/* ДЕСКТОП  */
+@media (min-width: 1200px) {
+
+  .nav-menu {
+    gap: 28px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+  .logo-title {
+    font-size: 3.5rem;
+  }
+
+  .portal-screen {
+    height: 340px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .tbc-features-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .hex-tabs-row {
+    gap: 30px;
+  }
+
+  .hexagon-shape {
+    width: 66px;
+    height: 76px;
+  }
+
+  .boss-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portal-form-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3rem;
+  }
+}
