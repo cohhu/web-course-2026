@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <h1>Быки и коровы</h1>
+    <p class="rules">
+        Компьютер загадал 4-значное число из неповторяющихся цифр.
+        Попробуйте угадать его!<br>
+        <strong>Бык</strong> — цифра угадана и стоит на своём месте.<br>
+        <strong>Корова</strong> — цифра есть в числе, но стоит на другом месте.
+    </p>
+
+    <div id="message-box" class="message-box hidden"></div>
+
+    <div class="controls-card">
+        <form id="guess-form" autocomplete="off" onsubmit="return false;">
+            <input
+                    type="text"
+                    id="guess-input"
+                    maxlength="4"
+                    placeholder="Например: 1234"
+                    autofocus
+            >
+            <button type="submit" id="guess-btn">Проверить</button>
+            <button type="button" id="new-game-btn">Новая игра</button>
+        </form>
+    </div>
+
+    <div class="stats-card">
+        <div class="counter-box">
+            Попыток сделано: <span id="attempts-count">0</span>
+        </div>
+
+        <h2>История попыток</h2>
+        <div class="history-container">
+            <ul id="history-list">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
