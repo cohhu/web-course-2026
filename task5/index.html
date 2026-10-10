@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра Simon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="game-wrapper">
+    <header class="game-header">
+        <h1>Simon Says</h1>
+        <div class="stats-panel">
+            <div class="stat-item">
+                <span class="stat-label">Раунд:</span>
+                <span id="current-score" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Рекорд:</span>
+                <span id="best-score" class="stat-value">0</span>
+            </div>
+        </div>
+        <p id="status-message" class="status-text"></p>
+    </header>
+
+    <div class="simon-board" id="board">
+        <button class="sector sector-green" data-index="0" aria-label="Зеленый"></button>
+        <button class="sector sector-red" data-index="1" aria-label="Красный"></button>
+        <button class="sector sector-yellow" data-index="2" aria-label="Желтый"></button>
+        <button class="sector sector-blue" data-index="3" aria-label="Синий"></button>
+        <div class="center-hub"></div>
+    </div>
+
+    <div class="controls">
+        <button id="start-btn" class="btn-start">Старт</button>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
